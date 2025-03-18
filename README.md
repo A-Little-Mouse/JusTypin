@@ -1,2 +1,2 @@
 # JusTypin
-Not perfect , just learning
+Not perfect , just learning JusTypin
