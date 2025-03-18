@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SwifZ.css">
+    <title>JusTypin</title>
+    <link rel="shortcut icon" href="imagesforswiftz\nobgg.png"/>
+</head>
+<body>
+    <div class="header"> 
+          <div class="logo">
+            <img class="logo_1" src="imagesforswiftz\96196285-169d-4659-abe1-8da158984ace.jpg" alt="logo_1"> 
+          <img class="logo_2" src="imagesforswiftz\Untitled.svg" alt="logo-2">
+          </div>
+          <div class="RCV">
+            <a class="rcv" href="https://www.facebook.com/profile.php?id=61551385760633" target="_blank"><img class="logo_3" src="imagesforswiftz\af28e440-3491-4539-98da-136e7de996ea.jpg" alt="rcv"></a>
+          </div>
+    </div>
+
+
+<div class="sir"><!-- wrapper -->
+  
+    <div class="main"><!-- content box -->
+      
+      <div class="info"><!--content-->
+        <div  style="cursor: pointer;" onclick="change()" class="time">
+          <p>Time:</p>
+          <span><b id="time">30s</b></span>
+        </div>
+        <div class="wpm">
+          <p>WPM:</p>
+          <span><b>0</b></span>
+        </div>
+       </div>
+       
+      <input class="input" id="input" type="text">
+      
+          <div class="window" id="window"><!-- typing test -->
+            
+            <p class="brownmundae" id="brownmundae"></p>
+          </div>
+
+
+            <div class="board">
+
+
+      <div class="caps">
+        <div class="keys">Q</div>
+        <div class="keys">W</div>
+        <div class="keys">E</div>
+        <div class="keys">R</div>
+        <div class="keys">T</div>
+        <div class="keys">Y</div>
+        <div class="keys">U</div>
+        <div class="keys">I</div>
+        <div class="keys">O</div>
+        <div class="keys">P</div>
+      </div>
+
+
+      <div class="caps">
+        <div class="keys">A</div>
+        <div class="keys">S</div>
+        <div class="keys">D</div>
+        <div class="keys">F</div>
+        <div class="keys">G</div>
+        <div class="keys">H</div>
+        <div class="keys">J</div>
+        <div class="keys">K</div>
+        <div class="keys">L</div>
+      </div>
+
+
+      <div class="caps">
+        <div class="keys">Z</div>
+        <div class="keys">X</div>
+        <div class="keys">C</div>
+        <div class="keys">V</div>
+        <div class="keys">B</div>
+        <div class="keys">N</div>
+        <div class="keys">M</div>
+      </div>
+
+
+      </div>
+
+
+    </div> 
+
+
+  </div>
+  
+
+    <div class="navbar">
+          <div class="nav">
+            <img onclick='refreshpage()' class="botton" src="imagesforswiftz\home botton.svg" alt="home">
+            <img id='return' onclick="refresh()" onclick="refresh()" class="botton" src="imagesforswiftz\undo-arrow.png" alt="return">
+            <img onclick='popupopen()' class="botton"  src="imagesforswiftz\eroor.svg" alt="error">
+          </div>
+     </div>
+
+
+     <div class="tagmain">
+      <img class="tag" src="imagesforswiftz\tag.svg" alt="tag">
+     </div>
+
+    <div class="popup" id="popup">
+       <div class="title">
+        <h1>Your Performance</h1>
+       </div>
+
+
+       <div class="content">
+
+        <div class="mistake">
+          <p>Mistake: </p>
+          <span><b>0</b></span>
+        </div>
+
+        <div style="cursor: pointer;" onclick="change()" class="t">
+          <p>Time: </p> <span><b id="tyme">30s</b></span>
+        </div>
+
+        <div class="wpm">
+          <p>WPM:</p>
+          <span><b>0</b></span>
+        </div>
+
+        <div class="cpm">
+         <p>CPM: </p>
+         <span><b>0</b></span>
+        </div>
+        
+       </div>
+        
+
+       <div class="below">
+        
+        <div class="bilow">
+          <img class="tab" loading="lazy" id="tab" src="imagesforswiftz\tab-key.png" alt="tab">
+          <p> You can use key TAB to refresh the typing test</p>
+        </div>
+        
+       </div>
+
+    </div>
+
+
+     <script src="paragraph.js"></script>
+     <script src="keyboard.js"></script>
+     <script src="refresh.js"></script>
+     <script src="popup.js"></script>
+     <script src="typing-test.js"></script>
+</body>
+</html>
