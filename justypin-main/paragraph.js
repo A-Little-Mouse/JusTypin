@@ -28,18 +28,35 @@ function generateParagraph(){
 }
 
     function loadParagraph() {
-        typingText.innerHTML = "";
-        let generated="";
-        for(let i=0;i<5;i++){generated+= generateParagraph();}
-        
-        generated.split("").forEach(char => {
-            console.log(char);
-            let span = `<span>${char}</span>`
-            typingText.innerHTML += span;
-        });
-        typingText.querySelectorAll("span")[0].classList.add("active");
-        document.addEventListener("keydown", () => inpField.focus());
-        typingText.addEventListener("click", () => inpField.focus());}
+    // Clear previous text
+    typingText.innerHTML = "";
+    
+    // Generate new paragraph text
+    let generated = "";
+    for(let i = 0; i < 5; i++) {
+        generated += generateParagraph();
+    }
+    
+    // Create document fragment for better performance
+    const fragment = document.createDocumentFragment();
+    
+    // Create spans for each character
+    generated.split("").forEach(char => {
+        const span = document.createElement("span");
+        span.textContent = char;
+        fragment.appendChild(span);
+    });
+    
+    // Add all spans to the DOM at once (more efficient)
+    typingText.appendChild(fragment);
+    
+    // Set the first character as active
+    typingText.querySelectorAll("span")[0].classList.add("active");
+    
+    // Focus on input field when user interacts
+    document.addEventListener("keydown", () => inpField.focus());
+    typingText.addEventListener("click", () => inpField.focus());
+}
 
 
 

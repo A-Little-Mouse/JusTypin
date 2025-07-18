@@ -1,48 +1,56 @@
 
 /* keyboard */
 
-let popup = document.getElementById('popup')
+// DOM element references
+const popup = document.getElementById('popup');
 const myInput = document.getElementById('input');
-let keys = document.querySelectorAll('.keys');
+const keys = document.querySelectorAll('.keys');
 
-
-window.onload = function() {
-  myInput.focus();
+// Focus on input field when page loads
+window.onload = function () {
+    myInput.focus();
 };
 
+// Set key attributes for all keyboard keys
+keys.forEach(key => {
+    key.setAttribute('keyname', key.innerText);
+    key.setAttribute('lowerCaseName', key.innerText.toLowerCase());
+});
 
-for(let i = 0; i < keys.length; i++) {
-    keys[i].setAttribute('keyname', keys[i].innerText);
-    keys[i].setAttribute('lowerCaseName', keys[i].innerText.toLowerCase());
-}
+// Handle keydown events
+window.addEventListener('keydown', function (e) {
+    // Highlight the pressed key
+    keys.forEach(key => {
+        if (e.key === key.getAttribute('keyname') || e.key === key.getAttribute('lowerCaseName')) {
+            key.classList.add('active');
+        }
+    });
 
-window.addEventListener('keydown', function(e) {
-    for(let i = 0; i < keys.length; i++) {
-        if(e.key == keys[i].getAttribute('keyname') || e.key == keys[i].getAttribute('lowerCaseName')) {
-            keys[i].classList.add('active')
-        }
-        if (event.key === 'Tab') {
-            event.preventDefault();
-            refreshpage();
-        }
-
-        if (event.key === 'Escape') {
-            event.preventDefault();
-            popup.classList.remove("open-popup");
-        }
+    // Special key handling
+    if (e.key === 'Tab') {
+        e.preventDefault();
+        refreshpage();
     }
-})
 
-window.addEventListener('keyup', function(e) {
-    for(let i = 0; i < keys.length; i++) {
-        if(e.key == keys[i].getAttribute('keyname' ) || e.key == keys[i].getAttribute('lowerCaseName')) {
-            keys[i].classList.remove('active')
-            keys[i].classList.add('remove')
-        }
-        setTimeout(()=> {
-            keys[i].classList.remove('remove')
-        },200)
+    if (e.key === 'Escape') {
+        e.preventDefault();
+        popup.classList.remove("open-popup");
     }
-})
+});
+
+// Handle keyup events
+window.addEventListener('keyup', function (e) {
+    keys.forEach(key => {
+        if (e.key === key.getAttribute('keyname') || e.key === key.getAttribute('lowerCaseName')) {
+            key.classList.remove('active');
+            key.classList.add('remove');
+
+            // Remove the animation class after animation completes
+            setTimeout(() => {
+                key.classList.remove('remove');
+            }, 200);
+        }
+    });
+});
 
 
