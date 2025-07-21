@@ -30,6 +30,5 @@ See the detailed instructions in the [project README](justypin-main/README.md).
 - CSS3
 - JavaScript (Vanilla)
 
-## License
-
-This project is open source and available for personal and educational use.
+---
+Made by BALM
