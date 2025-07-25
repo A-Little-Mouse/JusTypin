@@ -31,4 +31,4 @@ See the detailed instructions in the [project README](justypin-main/README.md).
 - JavaScript (Vanilla)
 
 ---
-Made by BALM
+BALM
