@@ -43,7 +43,3 @@ This project uses vanilla JavaScript, HTML, and CSS. No external libraries or fr
 - `paragraph.js`: Text generation for typing tests
 - `popup.js`: Results popup functionality
 - `refresh.js`: Reset and refresh functionality
-
-## License
-
-This project is open source and available for personal and educational use.
